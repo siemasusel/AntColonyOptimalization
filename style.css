@@ -1,0 +1,29 @@
+table#gridtable {
+  border-collapse: collapse;
+  border-spacing; 0;
+}
+.gridcell{
+  padding: 5px;
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.gridcoor{
+  background-color: lightgray;
+  border-radius: 50%;
+}
+.gridpath{
+  /* background-color: LightGoldenRodYellow; */
+  padding: 5px;
+  font-size: 12px;
+  font-style: italic;
+  vertical-align: middle;
+}
+.noborder{
+  border: 0;
+}
+.gridpoint{
+  background-color: orange;
+}
+.startpoint{
+  background-color: Aqua;
+}

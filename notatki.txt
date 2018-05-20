@@ -1,0 +1,30 @@
+n iteracji, k mrowek
+
+puszczam k mrowek z [0,0] az znajda jakis cel J[], licze ktory cel zostal znaleziony najczesciej z ostatnich ceil(k/2) mrowek i wybieram trase o najkrotszej sciezce, usuwam J1 z poszukiwanych
+puszczam k mrowek z J1 szukaja celu j[] (bez J1), licze ktory cel zostal znaleziony najczesciej z ostatnich ceil(k/2) mrowek i wybieram trase o najkrotszej sciezce, usuwam J2 z poszukiwanych ... itd
+
+
+feromony aktualizowane na sciezka cyklicznie (po znalezieniu pounktu przez mrowke).
+Mrowka nie moze sie cofac do punktow juz odwiedzanych (zabezpieczyc przez petla).
+
+n iteracji
+	puszczam mrowke $k, 
+		Inicjacja();
+		szukam dla niej mozliwych puntkow z $currentPoint, sprawdzeniePetli, licze prawdopodobienstwo dla tych punktow, losuje z wazonym prawdopodobinstwem punkt nastepny $nextPoint i dodaje go na koniec $antsVisitedPoints[$k] i $antDistanceTraveled,
+		podmieniam $currentPoint na $nextPoint i powtarzam az do przejscia przez wszystkie wymagane punkty.
+	Po przejsciu wszystkich mrowek czesc feromonu wyparuj i zaktualizauje poziom feromonu na krawedziach. nastepna iteracja
+
+
+
+Inicjacja(): ustaw $antPointsToEnd na targety, wyzeruj: $antDistanceTraveled, $antTabupoints
+
+Tabu = poprzednie punkty
+sprzawdzeniePetli = jesli puste $possibleNextPoints uwal mrowke, nie licz jej w nic
+
+Dodac Oscylacje na pobliskie punkty, tablica po 4 od danego Target Pointa
+
+$allowedPoints resetowac na trasy mrowki (dla [0, 0])
+
+po wybraniu nowego punktu sprawdz czy jest on w sasiedztwie
+
+Mrowka nie moze wrocic do punktow ktore juz odwiedzila od ostatniego czasu z innego punktu
